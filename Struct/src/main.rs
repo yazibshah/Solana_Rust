@@ -138,7 +138,7 @@ fn set_color(color:(u8, u8, u8)) {
 } */
 
 
-struct Color(u8, u8, u8);
+/* struct Color(u8, u8, u8);
 struct Point(u8,u8,u8);
 
 
@@ -156,4 +156,55 @@ fn set_color(color:Color){
 }
 fn set_point(point:Point){
     println!("Point Values: {}, {}, {}", point.0, point.1, point.2);
+} */
+
+
+// =================== Example Structs ===================
+
+/* fn main(){
+    let w=100;
+    let h=200;
+
+    let area= calculate_area(w, h);
+    println!("Area is: {}", area);
+}
+
+fn calculate_area(width:u32, height:u32) -> u32{
+    width * height
+} */
+
+
+/* struct Area(u32, u32);
+
+fn main(){
+    let area:Area= Area(100, 200);
+    let result= calculate_area(area);
+    println!("Area is: {}", result);
+}
+
+fn calculate_area(area:Area) -> u32{
+    area.0 * area.1
+} */
+
+
+
+struct Rectangle{
+    width: u32,
+    height: u32
+}
+
+fn main(){
+    let rect= Rectangle{
+        width: 100,
+        height:200
+    };
+
+    let area = calculate_area(rect);
+    println!("Area is: {}", area);
+
+
+}
+
+fn calculate_area(rect:Rectangle) -> u32{
+    rect.width * rect.height
 }
