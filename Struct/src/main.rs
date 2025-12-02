@@ -187,7 +187,7 @@ fn calculate_area(area:Area) -> u32{
 } */
 
 
-
+#[derive(Debug)]
 struct Rectangle{
     width: u32,
     height: u32
@@ -199,12 +199,14 @@ fn main(){
         height:200
     };
 
-    let area = calculate_area(rect);
-    println!("Area is: {}", area);
+    // let area = calculate_area(&rect);
+    let area = dbg!(calculate_area(&rect));
+    dbg!(&rect);
+    println!("Value of Rect {:#?} Area is: {}",rect, area);
 
 
 }
 
-fn calculate_area(rect:Rectangle) -> u32{
+fn calculate_area(rect:&Rectangle) -> u32{
     rect.width * rect.height
 }
