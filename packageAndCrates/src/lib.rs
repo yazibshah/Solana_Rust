@@ -1,27 +1,16 @@
-pub struct Credentials{
-    pub username: String,
-    pub password: String,
-}
+pub mod util;
 
-enum Status{
-    Connected,
-    Interrupted,
-}
+mod database;
 
-pub fn connect_to_database() -> Status {
-    Status::Connected
-}
+ 
+pub mod auth_utils;
+use auth_utils::{login, models::Credentials};
+use database::Status;
 
-pub fn get_user() {
-
-}
-
-pub fn login(cred:Credentials){
-    get_user();
-}
 pub fn authenticate(cred: Credentials){
-    if let Status::Connected = connect_to_database(){
+    if let Status::Connected = database::connect_to_database(){
         println!("User {} authenticated successfully.", cred.username);
+        login(cred);
     }else{
         println!("Authentication failed due to connection issues.");
     }

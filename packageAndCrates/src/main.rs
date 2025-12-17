@@ -1,4 +1,4 @@
-use packageAndCrates::{Credentials, authenticate};
+use packageAndCrates::{auth_utils::models::Credentials, authenticate};
 // use packageAndCrates::;
 
 
@@ -8,5 +8,6 @@ fn main(){
         password: String::from("password123")
     };
 
-    authenticate(cred);
+    authenticate(cred); 
+    // packageAndCrates::authenticate(cred);
 }
